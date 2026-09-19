@@ -1,0 +1,773 @@
+/* Navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(
+    -45deg,
+    #ff7097,
+    #e9c5d3,
+    #c9dce7,
+    #a9cfdf,
+    #82aac3
+  );
+
+  background-size: 400% 400%;
+  animation: smoothGradient 8s ease-in-out infinite;
+
+  color: #1b2a41;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes smoothGradient {
+  0% {
+    background-position: 100% 100%;
+  }
+
+  50% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.Navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  background: rgba(205, 190, 190, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(100px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 30px;
+  box-shadow: 4px 5px 20px rgba(255, 255, 255, 0.8);
+}
+
+.nav-r-part {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.nav-buttons {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 4px 5px 20px rgba(255, 255, 255, 0.8);
+}
+
+.nav-buttons a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-buttons:hover {
+  transform: scale(1.08);
+  background-color: #0077b5;
+}
+
+/* Hero Part */
+
+.hero {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.hero-title h2,
+.hero-title h1 {
+  font-size: 40px;
+  font-family: "Gveret Levin", cursive;
+}
+
+.hero-title {
+  position: absolute;
+  top: 20px;
+  color: #2b3229;
+  text-align: center;
+  font-family: ink free;
+  font-size: 25px;
+}
+
+.python {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 200px;
+  left: 70%;
+}
+
+.code {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 300px;
+  left: 20%;
+}
+
+.programmer {
+  position: absolute;
+  top: 350px;
+  left: 45%;
+  height: 300px;
+  width: 300px;
+}
+
+.brain {
+  position: absolute;
+  top: 380px;
+  left: 85%;
+  height: 80px;
+  width: 80px;
+}
+
+.chart {
+  position: absolute;
+  top: 150px;
+  left: 15%;
+  height: 80px;
+  width: 80px;
+}
+
+/* Introduction */
+
+.introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#intro-img-and-font {
+  display: flex;
+  font-size: 20px;
+  gap: 200px;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.introduction #intro-img-and-font {
+  font-weight: 700;
+}
+
+/* Skills */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.box {
+  flex: 1 1 200px;
+  width: 180px;
+  height: 600px;
+  background: linear-gradient(135deg, #5003c0, #ff467a);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, background 0.5s ease;
+  box-shadow: 3px 5px 20px rgb(65, 65, 255);
+}
+
+.box p {
+  padding: 40px 0;
+}
+
+.box:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #6a0fdc, #ff6b94);
+}
+
+#about-me,
+#skills,
+#projs h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 20%,
+    transparent 70%
+  );
+  animation: moveBg 6s linear infinite;
+}
+
+@keyframes moveBg {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(30px, 30px) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+/* Projects */
+
+.projects {
+  text-align: center;
+}
+
+.projects-sample {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+.projects-sample div {
+  text-align: center;
+  max-width: 200px;
+}
+.projects-sample img {
+  width: 100%;
+  height: auto;
+}
+.projects-sample p {
+  margin-top: 8px;
+}
+
+.project-imgs {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+  height: 300px;
+}
+/* Get in Touch Section */
+.getintouch {
+  background: linear-gradient(135deg, #5003c0, #ff467a);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  height: 300px;
+}
+
+.info-container {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+button {
+  position: relative;
+  padding: 20px 35px;
+  background: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  border-radius: 100px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+}
+
+button:hover {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 80px #ffffff8c;
+}
+
+.star-1,
+.star-2,
+.star-3,
+.star-4,
+.star-5,
+.star-6 {
+  position: absolute;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-1 {
+  top: 20%;
+  left: 20%;
+  width: 25px;
+}
+.star-2 {
+  top: 45%;
+  left: 45%;
+  width: 15px;
+}
+.star-3 {
+  top: 40%;
+  left: 40%;
+  width: 5px;
+}
+.star-4 {
+  top: 20%;
+  left: 40%;
+  width: 8px;
+}
+.star-5 {
+  top: 25%;
+  left: 45%;
+  width: 15px;
+}
+.star-6 {
+  top: 5%;
+  left: 50%;
+  width: 5px;
+}
+
+button:hover .star-1 {
+  top: -20%;
+  left: -20%;
+  width: 20px;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+button:hover .star-2 {
+  top: 35%;
+  left: -25%;
+  width: 15px;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+button:hover .star-3 {
+  top: 80%;
+  left: -10%;
+  width: 10px;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+button:hover .star-4 {
+  top: -25%;
+  left: 105%;
+  width: 20px;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+button:hover .star-5 {
+  top: 30%;
+  left: 115%;
+  width: 15px;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+button:hover .star-6 {
+  top: 80%;
+  left: 105%;
+  width: 10px;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+
+button:nth-child(2) {
+  background: #25d366;
+  color: #fff;
+}
+button:nth-child(3) {
+  background: #0077b5;
+  color: #fff;
+}
+button:nth-child(4) {
+  background: #333;
+  color: #fff;
+}
+button:nth-child(5) {
+  background: linear-gradient(45deg, #feda75, #d62976, #962fbf, #4f5bd5);
+  color: #fff;
+}
+button:nth-child(6) {
+  background: #1877f2;
+  color: #fff;
+}
+
+/* ==========================================================
+   Responsive Design
+   Mobile-first overrides. Covers small phones, standard
+   phones, phablets, tablets (portrait + landscape), and
+   scales cleanly up to desktop. Tested against iPhone SE,
+   iPhone 12-15 (incl. Pro/Max), Samsung Galaxy S/A series,
+   iPad mini/Air/Pro, and Samsung Galaxy Tab widths.
+   ========================================================== */
+
+/* -----------------------------------------------------------
+   1) Everything up to 1024px (all phones + tablet portrait,
+      and most tablet landscape): stack the hero instead of
+      relying on fixed pixel positions, which is what caused
+      overlap/overflow on narrow screens.
+   ----------------------------------------------------------- */
+@media (max-width: 1024px) {
+  /* Scoped box-sizing fix: padding on .hero, .Navigation, .getintouch etc.
+     was adding to their 100%/92% widths and pushing the page wider than
+     the viewport, which is what created the extra horizontal scrollbar.
+     Scoping this inside the media query keeps the first part of the
+     file untouched. */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .Navigation {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 60px;
+    width: 92%;
+    max-width: 500px;
+    margin: 12px auto;
+    padding: 10px;
+    row-gap: 10px;
+  }
+
+  .div-l-part {
+    display: none;
+  }
+
+  .nav-r-part {
+    width: 100%;
+    gap: 10px 16px;
+  }
+
+  .nav-buttons {
+    width: auto;
+    height: auto;
+    padding: 8px 14px;
+  }
+
+  .nav-buttons .texts {
+    font-size: 14px;
+  }
+
+  /* Hero: icons in a column on the left, title text on the
+     right — side by side, matching the target mobile layout */
+  .hero {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 0;
+    padding: 110px 15px 50px;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  .hero-title {
+    position: static;
+    width: auto;
+    max-width: 62%;
+    padding: 0;
+    transform: none;
+    text-align: center;
+  }
+
+  .hero-images {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-width: none;
+    height: auto;
+    gap: 14px;
+    transform: none;
+  }
+
+  .hero-images img,
+  .python,
+  .code,
+  .brain,
+  .programmer,
+  .chart {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+  }
+
+  .programmer {
+    width: 34px;
+    height: 34px;
+    max-width: 34px;
+  }
+
+  .hero-title h1,
+  .hero-title h2 {
+    font-size: 32px;
+  }
+
+  .hero-title h2 span {
+    font-size: 36px !important;
+    font-weight: 700;
+  }
+
+  /* Intro: stack image above text instead of a fixed 200px gap */
+  #intro-img-and-font {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 60px;
+    padding: 0 20px;
+  }
+
+  #intro-img-and-font img {
+    margin: 0 auto;
+    width: clamp(140px, 40vw, 200px);
+    height: clamp(160px, 45vw, 250px);
+  }
+
+  #intro-img-and-font p {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  #about-me,
+  #skills,
+  .projects h1 {
+    margin-top: 70px;
+    font-size: clamp(28px, 6vw, 40px);
+  }
+
+  /* Skills grid */
+  .container {
+    width: 92%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 30px auto;
+    padding: 0;
+  }
+
+  .box {
+    width: 100%;
+    height: auto;
+    min-height: 220px;
+  }
+
+  .box p {
+    padding: 14px 8px;
+  }
+
+  /* Projects grid */
+  .projects {
+    padding: 0 20px;
+  }
+
+  .x {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .projects-sample {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin: 30px auto;
+  }
+
+  .project-imgs {
+    width: 100%;
+    height: 330px;
+  }
+
+  .project-images {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  /* Contact section */
+  .getintouch {
+    width: 100%;
+    height: auto;
+    padding: 50px 20px;
+  }
+
+  .title {
+    font-size: clamp(32px, 8vw, 50px);
+  }
+
+  .info-container p {
+    font-size: 16px;
+  }
+
+  .contact-buttons {
+    gap: 14px;
+  }
+
+  .contact-buttons button {
+    padding: 14px 22px;
+    font-size: 16px;
+  }
+}
+
+/* -----------------------------------------------------------
+   2) Small / standard phones (iPhone SE up through iPhone
+      15 Pro Max, most Android phones): single column
+   ----------------------------------------------------------- */
+@media (max-width: 480px) {
+  .box {
+    min-height: 180px;
+  }
+
+  .project-images {
+    height: 200px;
+  }
+}
+
+/* -----------------------------------------------------------
+   3) Large phones / phablets (Galaxy S Ultra, iPhone Plus/
+      Pro Max in the 481-600px range)
+   ----------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 600px) {
+}
+
+/* -----------------------------------------------------------
+   4) Tablets in portrait (iPad mini/Air/Pro portrait,
+      Samsung Galaxy Tab portrait): a bit more breathing room
+   ----------------------------------------------------------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    max-width: 500px;
+    gap: 40px;
+  }
+
+  .box {
+    min-height: 260px;
+  }
+
+  .projects-sample {
+    max-width: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-images {
+    height: 180px;
+  }
+
+  .hero-images img,
+  .python,
+  .code,
+  .brain,
+  .programmer,
+  .chart {
+    width: 44px;
+    height: 44px;
+    max-width: 44px;
+  }
+
+  .hero-title {
+    max-width: 55%;
+  }
+
+  .hero-title h1,
+  .hero-title h2 {
+    font-size: 26px;
+  }
+
+  .hero-title h2 span {
+    font-size: 32px !important;
+  }
+
+  #intro-img-and-font {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* -----------------------------------------------------------
+   5) Small laptops / large tablet landscape (iPad Pro
+      landscape sits around here on some models)
+   ----------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+
+  .hero-title {
+    font-size: 22px;
+  }
+}
+
+/* -----------------------------------------------------------
+   6) Desktop
+   ----------------------------------------------------------- */
+@media (min-width: 1201px) {
+  .container {
+    width: 80%;
+  }
+}
